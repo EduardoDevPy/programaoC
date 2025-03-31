@@ -51,21 +51,31 @@ int main() {
     printf("Número de pontos turísticos:\n");
     scanf("%d", &pturistico2);
 
+    // Novas variáveis do desafio aventureiro.
+    float densidade1 = populacao / area;
+    float densidade2 = populacao2 / area2;
+    float pib_capita1 = (pib * 1e9) / populacao; // necessário adicionar o pib * 1e9 para convertermos em bilhões.
+    float pib_capita2 = (pib2 * 1e9) / populacao2;
+    
+
     // Resultado da carta 1.
 
     printf("\nCarta 1\n\n");
     printf("Estado: %s\nCodigo: %s\nCidade: %s\n", estado, codigo, cidade);
     printf("População: %d\nÁrea: %.2f.km²\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %d\n", populacao, area, pib, pturistico);
+    printf("Densidade populacional: %.2f hab/km²\n", densidade1);
+    printf("PIB per capita: R$ %.2f\n", pib_capita1);
 
     // Resultado da carta 2.
 
     printf("\nCarta 2\n\n");
     printf("Estado: %s\nCodigo: %s\nCidade: %s\n", estado2, codigo2, cidade2);
     printf("População: %d\nÁrea: %.2f.km²\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %d\n", populacao2, area2, pib2, pturistico2);
+    printf("Densidade populacional: %.2f hab/km²\n", densidade2);
+    printf("PIB per capita: R$ %.2f\n", pib_capita2);
 
     return 0; 
 }
-
 
 
 
