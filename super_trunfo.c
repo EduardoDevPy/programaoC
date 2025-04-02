@@ -56,6 +56,11 @@ int main() {
     float densidade2 = populacao2 / area2;
     float pib_capita1 = (pib * 1e9) / populacao; // necessário adicionar o pib * 1e9 para convertermos em bilhões.
     float pib_capita2 = (pib2 * 1e9) / populacao2;
+
+    // Novas variáveis do desafio mestre.
+
+    float super_poder1 = populacao + area + pib + pturistico + pib_capita1 + (1/densidade1);
+    float super_poder2 = populacao2 + area2 + pib2 + pturistico2 + pib_capita2 + (1/densidade2); 
     
 
     // Resultado da carta 1.
@@ -65,6 +70,7 @@ int main() {
     printf("População: %d\nÁrea: %.2f.km²\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %d\n", populacao, area, pib, pturistico);
     printf("Densidade populacional: %.2f hab/km²\n", densidade1);
     printf("PIB per capita: R$ %.2f\n", pib_capita1);
+    printf("Super Poder: %.2f\n", super_poder1);
 
     // Resultado da carta 2.
 
@@ -73,12 +79,41 @@ int main() {
     printf("População: %d\nÁrea: %.2f.km²\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %d\n", populacao2, area2, pib2, pturistico2);
     printf("Densidade populacional: %.2f hab/km²\n", densidade2);
     printf("PIB per capita: R$ %.2f\n", pib_capita2);
+    printf("Super Poder: %.2f\n", super_poder2);
+
+    // Comparação das cartas.
+
+    printf("População: Carta %d venceu (%d)\n", 
+        !(populacao <= populacao2) + 1, 
+        (populacao > populacao2));
+
+       printf("Área: Carta %d venceu (%d)\n", 
+       !(area <= area2) + 1, 
+       (area > area2));
+
+       printf("PIB: Carta %d venceu (%d)\n", 
+       !(pib <= pib2) + 1, 
+       (pib > pib2));
+
+       printf("Pontos Turísticos: Carta %d venceu (%d)\n", 
+       !(pturistico <= pturistico2) + 1, 
+       (pturistico > pturistico2));
+
+       printf("Densidade Populacional: Carta %d venceu (%d)\n", 
+       !(densidade1 >= densidade2) + 1, 
+       (densidade1 < densidade2));
+
+       printf("PIB per Capita: Carta %d venceu (%d)\n", 
+       !(pib_capita1 <= pib_capita2) + 1, 
+       (pib_capita1 > pib_capita2));
+
+       printf("Super Poder: Carta %d venceu (%d)\n", 
+       !(super_poder1 <= super_poder2) + 1, 
+       (super_poder1 > super_poder2));
+
 
     return 0; 
 }
-
-
-
 
 
 
